@@ -1,0 +1,54 @@
+# =========================
+# DSpace / Java / Maven
+# =========================
+
+target/
+*.class
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.settings/
+.project
+.classpath
+
+# DSpace local configuration
+DSpace/dspace/config/local.cfg
+DSpace/local.cfg
+
+# Logs
+*.log
+
+# =========================
+# dspace-angular / Node
+# =========================
+
+dspace-angular/node_modules/
+dspace-angular/.angular/
+dspace-angular/dist/
+dspace-angular/build/
+dspace-angular/coverage/
+
+# Angular / Node generated files
+dspace-angular/npm-debug.log*
+dspace-angular/*.records.json
+
+# Environment files
+dspace-angular/.env
+
+# =========================
+# Sistema operacional
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# Java / DSpace
+**/target/
+
+# Node / DSpace Angular
+**/node_modules/
+**/.angular/cache/
+**/dist/
+**/coverage/
