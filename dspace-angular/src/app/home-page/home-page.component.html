@@ -1,35 +1,208 @@
-@if (homeHeaderMetadataValue$ | async; as homeHeaderMetadataValue) {
-  <div class="container home-header">
-    <ds-markdown-viewer [value]="homeHeaderMetadataValue"></ds-markdown-viewer>
+<!-- HERO -->
+<section class="ufac-hero">
+  <div class="ufac-hero-overlay">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          ACESSO ABERTO AO CONHECIMENTO
+        </span>
+
+        <h1>
+          Repositório
+          <span>Institucional</span>
+          da UFAC
+        </h1>
+
+        <p class="hero-description">
+          Publique, acesse e compartilhe trabalhos de conclusão,
+          teses, dissertações, artigos e produções acadêmicas
+          da Universidade Federal do Acre.
+        </p>
+
+        <!-- BUSCA -->
+        <div class="hero-search">
+          <ds-search-form
+            [inPlaceSearch]="false"
+            [searchPlaceholder]="'home.search-form.placeholder' | translate">
+          </ds-search-form>
+        </div>
+
+        <!-- ÁREAS -->
+        <div class="hero-tags">
+          <span>Inteligência Artificial</span>
+          <span>Saúde Pública</span>
+          <span>Educação Básica</span>
+          <span>Direitos Humanos</span>
+          <span>Energias Renováveis</span>
+        </div>
+
+      </div>
+
+    </div>
   </div>
-}
+</section>
 
-<ds-home-coar></ds-home-coar>
-<ds-home-news></ds-home-news>
 
-@if (showDiscoverFilters) {
-  <ds-configuration-search-page
-    [sideBarWidth]="3"
-    [showViewModes]="false"
-    [searchEnabled]="false"
-    [inPlaceSearch]="false"
-    [showScopeSelector]="false">
-    <ng-container searchContentTop *ngTemplateOutlet="homeContent"></ng-container>
-  </ds-configuration-search-page>
-}
-@if (!showDiscoverFilters) {
+<!-- ESTATÍSTICAS -->
+<section class="ufac-statistics">
   <div class="container">
-    <ng-container *ngTemplateOutlet="homeContent"></ng-container>
-  </div>
-}
-<ds-suggestions-popup></ds-suggestions-popup>
 
-<ng-template #homeContent>
-  <ds-search-form [inPlaceSearch]="false"
-    [searchPlaceholder]="'home.search-form.placeholder' | translate">
-  </ds-search-form>
-  <ds-top-level-community-list></ds-top-level-community-list>
-  @if (recentSubmissionspageSize>0) {
-    <ds-recent-item-list></ds-recent-item-list>
-  }
-</ng-template>
+    <div class="statistics-grid">
+
+      <div class="stat-item">
+        <strong>19.355</strong>
+        <span>Documentos</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>4.218</strong>
+        <span>Autores</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>47</strong>
+        <span>Programas de Pós-Graduação</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>12</strong>
+        <span>Unidades Acadêmicas</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="ufac-home-content">
+
+  <div class="container">
+
+    <!-- COLEÇÕES -->
+    <section class="ufac-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>Coleções</h2>
+          <p>Navegue por tipo de produção acadêmica</p>
+        </div>
+
+        <a href="/community-list">
+          Ver todas →
+        </a>
+      </div>
+
+      <ds-top-level-community-list></ds-top-level-community-list>
+
+    </section>
+
+
+    <!-- DEPÓSITOS RECENTES -->
+    @if (recentSubmissionspageSize > 0) {
+
+      <section class="ufac-section recent-section">
+
+        <div class="section-heading">
+          <div>
+            <h2>Depósitos Recentes</h2>
+            <p>Últimas publicações adicionadas ao repositório</p>
+          </div>
+
+          <a href="/search">
+            Ver mais →
+          </a>
+        </div>
+
+        <div class="area-filters">
+
+          <button class="active">
+            Todas as Áreas
+          </button>
+
+          <button>Computação</button>
+          <button>Saúde</button>
+          <button>Educação</button>
+          <button>Engenharia</button>
+          <button>Direito</button>
+          <button>Ciências Sociais</button>
+          <button>Letras</button>
+
+        </div>
+
+        <div class="recent-items">
+          <ds-recent-item-list></ds-recent-item-list>
+        </div>
+
+      </section>
+
+    }
+
+
+    <!-- SUBMISSÃO + BUSCA AVANÇADA -->
+    <section class="ufac-actions">
+
+      <div class="submit-card">
+
+        <div class="card-content">
+
+          <span>PARA ALUNOS</span>
+
+          <h2>
+            Submeta sua
+            <em>produção acadêmica</em>
+          </h2>
+
+          <p>
+            Professores, alunos e pesquisadores da UFAC podem
+            depositar trabalhos seguindo as diretrizes
+            institucionais de acesso aberto.
+          </p>
+
+          <a href="/submit">
+            Iniciar Submissão
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="advanced-search-card">
+
+        <span>BUSCA AVANÇADA</span>
+
+        <h2>
+          Refine sua
+          <em>pesquisa bibliográfica</em>
+        </h2>
+
+        <p>
+          Filtre por programa de pós-graduação,
+          ano, área do conhecimento, orientador
+          ou tipo de documento.
+        </p>
+
+        <ul>
+          <li>Busca por autor</li>
+          <li>Busca por orientador</li>
+          <li>Busca por programa</li>
+        </ul>
+
+        <a href="/search">
+          Busca Avançada
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<ds-suggestions-popup></ds-suggestions-popup>
