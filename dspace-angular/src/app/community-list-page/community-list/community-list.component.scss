@@ -2,3 +2,298 @@
   display: block;
   width: 16px;
 }
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.ufac-community-page {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.ufac-page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.ufac-page-kicker {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #6c757d;
+}
+
+.ufac-page-header h1 {
+  margin-bottom: 0.75rem;
+
+  font-size: 2.2rem;
+  font-weight: 500;
+
+  color: #343a40;
+}
+
+.ufac-page-header p {
+  max-width: 850px;
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: #6c757d;
+}
+
+/* =========================================================
+   ÁREA DA ÁRVORE
+   ========================================================= */
+
+.ufac-section {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/*
+ * O CDK Tree possui estilos próprios de display.
+ * Forçamos cada nó a ocupar toda a largura disponível.
+ */
+::ng-deep .ufac-community-page cdk-tree {
+  display: block;
+  width: 100%;
+}
+
+::ng-deep .ufac-community-page cdk-tree-node {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* =========================================================
+   COMUNIDADES PRINCIPAIS
+   ========================================================= */
+
+::ng-deep .ufac-community-page cdk-tree-node.expandable-node {
+  display: block !important;
+
+  width: 100% !important;
+  box-sizing: border-box;
+
+  margin: 0 0 1rem 0;
+  padding: 1.25rem 1.5rem !important;
+
+  border: 1px solid #dee2e6;
+  border-radius: 0.6rem;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+::ng-deep .ufac-community-page cdk-tree-node.expandable-node:hover {
+  border-color: #cbd3da;
+
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   LINHA DO TÍTULO
+   ========================================================= */
+
+::ng-deep .ufac-community-page cdk-tree-node.expandable-node > .btn-group {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+/* =========================================================
+   BOTÃO DE EXPANDIR
+   ========================================================= */
+
+::ng-deep .ufac-community-page .btn-transparent {
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #495057;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+::ng-deep .ufac-community-page .btn-transparent:hover {
+  background: #f1f3f5;
+  color: #1676a8;
+}
+
+/* =========================================================
+   NOME DA COMUNIDADE
+   ========================================================= */
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.expandable-node
+  a.lead {
+
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  color: #1676a8;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.expandable-node
+  a.lead:hover {
+
+  color: #0b5f89;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.expandable-node
+  .text-muted {
+
+  width: 100%;
+
+  margin-top: 0.4rem;
+
+  color: #6c757d !important;
+}
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.expandable-node
+  .text-muted span {
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CONTADOR DE ITENS
+   ========================================================= */
+
+::ng-deep .ufac-community-page .archived-items-lead {
+  margin-left: 0.5rem;
+
+  padding: 0.25rem 0.55rem;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  background-color: #6c757d;
+}
+
+/* =========================================================
+   COLEÇÕES / NÓS SEM FILHOS
+   ========================================================= */
+
+::ng-deep .ufac-community-page cdk-tree-node.childless-node {
+  display: block !important;
+
+  width: 100% !important;
+  box-sizing: border-box;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.childless-node
+  a {
+
+  color: #495057;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+::ng-deep .ufac-community-page
+  cdk-tree-node.childless-node
+  a:hover {
+
+  color: #1676a8;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   SHOW MORE
+   ========================================================= */
+
+::ng-deep .ufac-community-page cdk-tree-node.show-more-node {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+::ng-deep .ufac-community-page .ds-themed-loading {
+  margin: 0.5rem 0;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .ufac-community-page {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .ufac-page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .ufac-page-header p {
+    font-size: 0.95rem;
+  }
+
+  ::ng-deep .ufac-community-page
+    cdk-tree-node.expandable-node {
+
+    padding: 1rem !important;
+  }
+
+  ::ng-deep .ufac-community-page
+    cdk-tree-node.expandable-node
+    a.lead {
+
+    font-size: 1.1rem;
+  }
+
+  ::ng-deep .ufac-community-page cdk-tree-node.childless-node {
+  padding-left: 40px !important;
+  }
+}
